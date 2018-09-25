@@ -4,7 +4,7 @@ Docker Image is instantiated into a Docker Container
 
 
 Docker Commands
----------------------
+---------------
 
 *** Run a docker ***
 docker run <image_name>
