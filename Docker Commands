@@ -1,0 +1,62 @@
+Basics
+-------
+Docker Image is instantiated into a Docker Container
+
+
+Docker Commands
+---------------------
+
+*** Run a docker ***
+docker run <image_name>
+docker run -d <image_name> 			-- Run docker as a daemon process
+
+*** Create and Start a docker ***
+docker create <image_name>
+docker start <container_id> 		-- Output is NOT "Attached" to console
+docker start -a <container_id> 		-- Output is "Attached" to console
+
+*** Override default container start command ***
+docker run <image_name> <alternate_command>
+e.g., 
+	docker run busybox echo hello 	-- Output: hello
+	docker run busybox ls -- output: folders in container
+
+*** Show all running docker containers ***
+docker ps
+
+*** Show all past docker container ***
+docker ps --all
+
+*** Remove all stopped containers ***
+docker system prune
+
+*** Read logs of containers ***
+docker logs <container_id>
+
+*** Stop containers ***
+docker stop <container_id>
+docker kill <container_id>
+
+*** EXECUTE command within a container ***
+docker exec -it <container_id> <command>
+e.g.,
+	docker exec -it <container_id> redis-cli
+# -it : is used to provide input to the running container (Equivalent to -i -t in the command)
+# -i: Terminal is to be attached to the stdin process of container
+# -t: Output is nicely formatted on screen
+
+*** Port Mapping Example ***
+docker run -p <localhost port>:<docker container port> <image_id>
+
+********* Creating our own Image File **********
+
+Dockerfile --> Configuration defining how a container should behave, progarms and how to startup
+
+********* Using Docker Compose **********
+docker-compose up 					-- (Is equivalent to "docker run <image_name>")
+docker-compose up --build 			-- (Rebuild any docker images that have a local docker file)
+docker-compose up -d 				-- Start up docker-compose as a daemon process
+docker-compose down					-- Stop all running containers which were started using docker-compose up command
+
+********* Container Restart Policies **********
+"no",always,on-failure,unless-stopped

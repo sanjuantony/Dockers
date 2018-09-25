@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "simpleweb"
+		},
+		{
+			"path": "redis-image"
+		},
+		{
+			"path": "visits"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {}
+}
