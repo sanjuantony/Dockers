@@ -27,7 +27,7 @@ docker ps
 *** Show all past docker container ***
 docker ps --all
 
-*** Remove all stopped containers ***
+*** Remove all stopped containers *****
 docker system prune
 
 *** Read logs of containers ***
