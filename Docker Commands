@@ -60,3 +60,10 @@ docker-compose down					-- Stop all running containers which were started using 
 
 ********* Container Restart Policies **********
 "no",always,on-failure,unless-stopped
+
+********* Forcing Docker to build an image using a development Docker File **********
+docker build -f <Docker_File.dev> .
+********* Referencing a development folder outside of container **********
+docker run -p <local_port>:<container_port> -v /app/node_modules -v $(pwd):/app <image_id>
+** -v is the switch to reference a folder
+** ":" - means refer to an external folder (pwd) in the above case
